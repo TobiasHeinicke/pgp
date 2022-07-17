@@ -1,13 +1,13 @@
 package main
 
 import (
+	"crypto"
 	"flag"
 	"fmt"
-	"os"
-	"crypto"
 	"golang.org/x/crypto/openpgp"
 	"golang.org/x/crypto/openpgp/armor"
 	"golang.org/x/crypto/openpgp/packet"
+	"os"
 )
 
 func exitOnError(err error, where string) {
@@ -31,7 +31,7 @@ func main() {
 	}
 	keyname = flag.Arg(0)
 
-	cfg := &packet.Config {
+	cfg := &packet.Config{
 		DefaultHash: crypto.SHA256,
 	}
 

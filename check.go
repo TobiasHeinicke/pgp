@@ -60,7 +60,6 @@ func main() {
 	stdinBytes, err := ioutil.ReadAll(os.Stdin)
 	exitOnError(err, "reading stdin")
 
-
 	signer, err := openpgp.CheckArmoredDetachedSignature(entityList, bytes.NewReader(stdinBytes), bytes.NewReader(sigBytes))
 	if err == io.EOF {
 		signer, err = openpgp.CheckDetachedSignature(entityList, bytes.NewReader(stdinBytes), bytes.NewReader(sigBytes))

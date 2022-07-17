@@ -39,7 +39,7 @@ func entityListFromPubKeyFilePaths(keyFilePaths []string) openpgp.EntityList {
 		entityList = append(entityList, pubEntity)
 	}
 
-	return entityList;
+	return entityList
 }
 
 func exitOnError(err error, where string) {

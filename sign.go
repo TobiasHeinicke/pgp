@@ -46,7 +46,7 @@ func main() {
 	if *armor {
 		err = openpgp.ArmoredDetachSign(os.Stdout, entityList[0], os.Stdin, nil)
 	} else {
-		err =openpgp.DetachSign(os.Stdout, entityList[0], os.Stdin, nil)
+		err = openpgp.DetachSign(os.Stdout, entityList[0], os.Stdin, nil)
 	}
 	exitOnError(err, "signing data")
 }
